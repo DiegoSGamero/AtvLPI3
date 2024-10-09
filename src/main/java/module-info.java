@@ -10,7 +10,10 @@ module org.example.atvlpi3 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.compiler;
 
     opens org.example.atvlpi3 to javafx.fxml;
     exports org.example.atvlpi3;
+    exports org.example.atvlpi3.controllers;
+    opens org.example.atvlpi3.controllers to javafx.fxml;
 }

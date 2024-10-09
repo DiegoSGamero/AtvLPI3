@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="menu_container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.controllers.MenuController">
+   <children>
+      <Text layoutX="18.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Você está na LPI Application!">
+         <font>
+            <Font name="Bodoni MT" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow height="16.0" offsetX="2.0" offsetY="2.0" radius="7.5" width="16.0">
+               <color>
+                  <Color opacity="0.694656491279602" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Text>
+      <Text layoutX="24.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão algumas classes para interagir">
+         <font>
+            <Font name="Book Antiqua" size="16.0" />
+         </font>
+      </Text>
+      <ComboBox layoutX="95.0" layoutY="270.0" prefWidth="150.0" promptText="Selecione a classe..." />
+   </children>
+</AnchorPane>
