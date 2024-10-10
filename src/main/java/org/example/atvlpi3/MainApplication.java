@@ -28,7 +28,7 @@ public class MainApplication extends Application {
     //Método para carregar o arquivo FXML e garantir que retorna um Parent
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/menu-view.fxml"));
-        return fxmlLoader.load();  // Isso garante que o nó raiz é do tipo Parent
+        return fxmlLoader.load();  // raiz é do tipo Parent
     }
 
     public static void main(String[] args) {

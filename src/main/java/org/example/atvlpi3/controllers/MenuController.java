@@ -2,9 +2,13 @@ package org.example.atvlpi3.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.example.atvlpi3.MainApplication;
 
 import java.io.IOException;
@@ -20,7 +24,7 @@ public class MenuController {
     @FXML
     private void initialize() {
         // Adiciona opções ao dropdown
-        classDropdown.getItems().addAll("Reptile", "Feline", "Bird");
+        classDropdown.getItems().addAll("Réptil", "Felino", "Pássaro");
 
         // Define uma ação quando o usuário selecionar uma classe
         classDropdown.setOnAction(this::handleDropdownSelection);
@@ -30,28 +34,46 @@ public class MenuController {
     private void handleDropdownSelection(ActionEvent event) {
         String selectedClass = classDropdown.getValue();
         switch (selectedClass) {
-            case "Reptile":
-                navigateTo("reptile-view");
+            case "Réptil":
+                goToReptileScreen();
                 break;
-            case "Feline":
-                navigateTo("feline-view");
+            case "Felino":
+                goToFelineScreen();
                 break;
-            case "Bird":
-                navigateTo("bird-view");
+            case "Pássaro":
+                goToBirdScreen();
                 break;
             default:
                 break;
         }
     }
 
-    // Método para navegar para uma nova tela (FXML)
-    private void navigateTo(String fxml) {
+    private void goToBirdScreen() {
+        // Código para navegar para a tela de Pássaro (Bird)
+        System.out.println("Navegando para a tela de Pássaro");
+    }
+
+    private void goToReptileScreen() {
+        // Código para navegar para a tela de Réptil (Reptile)
+        System.out.println("Navegando para a tela de Réptil");
         try {
-            MainApplication.setRoot(fxml);  // Assume que MainApplication possui o método setRoot
-        } catch (
-                IOException e) {
-            e.printStackTrace();
+            // Carrega o arquivo FXML da tela de Réptil
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/reptile-view.fxml"));
+            Parent root = loader.load();
+
+            // Obtém a cena atual e troca para a nova cena
+            Stage stage = (Stage) classDropdown.getScene().getWindow(); // Obtém a janela atual
+            Scene scene = new Scene(root); // Cria uma nova cena com o layout carregado
+            stage.setScene(scene); // Define a nova cena na janela
+            stage.show(); // Exibe a nova tela
+        } catch (IOException e) {
+            e.printStackTrace(); // Exibe o erro caso o arquivo FXML não seja encontrado
         }
+    }
+
+    private void goToFelineScreen() {
+        // Código para navegar para a tela de Felino (Feline)
+        System.out.println("Navegando para a tela de Felino");
     }
 }
 
