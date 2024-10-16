@@ -1,4 +1,4 @@
-package org.example.atvlpi3.controllers;
+package org.example.atvlpi3.Controllers;
 
 
 import javafx.fxml.FXML;

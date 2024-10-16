@@ -14,6 +14,6 @@ module org.example.atvlpi3 {
 
     opens org.example.atvlpi3 to javafx.fxml;
     exports org.example.atvlpi3;
-    exports org.example.atvlpi3.controllers;
-    opens org.example.atvlpi3.controllers to javafx.fxml;
+    exports org.example.atvlpi3.Controllers;
+    opens org.example.atvlpi3.Controllers to javafx.fxml;
 }

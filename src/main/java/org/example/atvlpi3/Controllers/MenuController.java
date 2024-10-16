@@ -1,4 +1,4 @@
-package org.example.atvlpi3.controllers;
+package org.example.atvlpi3.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,10 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.atvlpi3.MainApplication;
 
 import java.io.IOException;
 
