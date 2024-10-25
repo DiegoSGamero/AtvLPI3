@@ -9,6 +9,10 @@ import javafx.scene.layout.AnchorPane;
 import org.example.atvlpi3.models.Reptile;
 
 public class ReptileController {
+
+    @FXML
+    private Button btnToShow;
+
     @FXML
     private AnchorPane container_birds;
 

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane fx:id="container_birds" prefHeight="540.0" prefWidth="340.0" style="-fx-background-radius: 4;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.ReptileController">
    <children>
@@ -37,6 +39,21 @@
       <Button fx:id="reptile_up_btn" layoutX="127.0" layoutY="424.0" mnemonicParsing="false" text="Cadastrar">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnToShow" layoutX="131.0" layoutY="470.0" mnemonicParsing="false" style="-fx-background-color: #889C58; -fx-border-radius: 4; -fx-border-color: #273104;" text="Ver animal">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="42.03" radius="15.870000000000001" width="23.45">
+               <color>
+                  <Color opacity="0.25954198837280273" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
    </children>
