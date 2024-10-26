@@ -15,7 +15,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Carregar o arquivo FXML corretamente
-        scene = new Scene(loadFXML("menu-view.fxml"), 340, 540);
+        scene = new Scene(loadFXML("reptile.fxml"), 340, 540);
         stage.setTitle("LPI Application!");
         stage.setScene(scene);
         stage.show();

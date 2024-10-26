@@ -2,11 +2,18 @@ package org.example.atvlpi3.Controllers;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.models.Reptile;
+
+import java.io.IOException;
 
 public class ReptileController {
 
@@ -28,6 +35,8 @@ public class ReptileController {
     @FXML
     private Button reptile_up_btn;
 
+    private Reptile reptileCadastrado;
+
     // Método para cadastrar o réptil
     private void cadastrarReptil() {
         try {
@@ -46,16 +55,16 @@ public class ReptileController {
             double peso = Double.parseDouble(pesoStr);
 
             // Criação da instância de Reptile
-            Reptile reptil = new Reptile(especie, habitat, peso);
+            reptileCadastrado = new Reptile(especie, habitat, peso);
 
             // Exibe uma mensagem de sucesso
-            exibirAlerta("Cadastro Concluído", "Réptil cadastrado com sucesso:\n" + reptil.toString());
+            exibirAlerta("Cadastro Concluído", "Réptil cadastrado com sucesso:\n" + reptileCadastrado.toString());
 
             // Limpa os campos após o cadastro
             limparCampos();
 
         } catch (NumberFormatException e) {
-            // Exibe um alerta caso o valor de peso não seja numérico
+            // Exibe alerta caso o valor de peso não seja numérico
             exibirAlerta("Erro de Cadastro", "Peso deve ser um valor numérico.");
         }
     }
@@ -65,6 +74,32 @@ public class ReptileController {
     public void initialize() {
         // Conectar o botão ao método de cadastro
         reptile_up_btn.setOnAction(event -> cadastrarReptil());
+        btnToShow.setOnAction(event -> rootShowReptile());
+    }
+
+    private void rootShowReptile() {
+        if (reptileCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um réptil antes de visualizar os detalhes.");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/reptile-details-view.fxml"));
+            Parent root = loader.load();
+
+            reptileShowController controller = loader.getController();
+            controller.setReptileDetails(reptileCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Réptil");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 
     // Método para exibir alertas

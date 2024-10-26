@@ -56,7 +56,7 @@ public class MenuController {
         System.out.println("Navegando para a tela de Réptil");
         try {
             // Carrega o arquivo FXML da tela de Réptil
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/reptile-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/reptile.fxml"));
             Parent root = loader.load();
 
             // Obtém a cena atual e troca para a nova cena
