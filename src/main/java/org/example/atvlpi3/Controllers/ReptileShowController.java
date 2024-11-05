@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import org.example.atvlpi3.models.Reptile;
 
-public class reptileShowController {
+public class ReptileShowController {
 
     @FXML
     private AnchorPane containerShowReptile;

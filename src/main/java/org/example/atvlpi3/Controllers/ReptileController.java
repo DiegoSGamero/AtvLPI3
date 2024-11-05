@@ -61,7 +61,7 @@ public class ReptileController {
             exibirAlerta("Cadastro Concluído", "Réptil cadastrado com sucesso:\n" + reptileCadastrado.toString());
 
             // Limpa os campos após o cadastro
-            limparCampos();
+            //limparCampos();
 
         } catch (NumberFormatException e) {
             // Exibe alerta caso o valor de peso não seja numérico
@@ -84,10 +84,10 @@ public class ReptileController {
         }
 
         try {
-            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/reptile-details-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/reptileShow.fxml"));
             Parent root = loader.load();
 
-            reptileShowController controller = loader.getController();
+            ReptileShowController controller = loader.getController();
             controller.setReptileDetails(reptileCadastrado);
 
             Stage stage = new Stage();

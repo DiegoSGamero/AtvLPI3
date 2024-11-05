@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane fx:id="containerShowReptile" prefHeight="540.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.reptileShowController">
+<AnchorPane fx:id="containerShowReptile" prefHeight="540.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.ReptileShowController">
    <children>
       <Text layoutX="142.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réptil">
          <font>
