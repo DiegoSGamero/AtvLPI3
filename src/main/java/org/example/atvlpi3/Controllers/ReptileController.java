@@ -1,6 +1,6 @@
 package org.example.atvlpi3.Controllers;
 
-
+import org.example.atvlpi3.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -79,6 +79,14 @@ public class ReptileController {
         // Conectar o botão ao método de cadastro
         reptile_up_btn.setOnAction(event -> cadastrarReptil());
         btnToShow.setOnAction(event -> rootShowReptile());
+        btnBackMenu.setOnAction(event -> {
+            try {
+                backToMenu();
+            } catch (IOException e) {
+                e.printStackTrace();
+                exibirAlerta("Erro", "Não foi possível voltar ao menu.");
+            }
+        });
     }
 
     private void rootShowReptile() {
@@ -137,5 +145,22 @@ public class ReptileController {
     //@Override
     public void feed() {
         System.out.println("Eating insects...");
+    }
+
+    public void backToMenu() throws IOException {
+        try {
+            // Carrega o arquivo FXML do menu
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/menu-view.fxml"));
+            Parent menuRoot = loader.load();
+
+            Stage stage = (Stage) btnBackMenu.getScene().getWindow();
+
+            // Define a nova cena no Stage atual
+            stage.setScene(new Scene(menuRoot));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erro ao carregar a cena do menu.");
+        }
     }
 }

@@ -21,8 +21,27 @@ public class MainApplication extends Application {
         stage.show();
     }
 
+    private static Scene currentScene;
+
+    public static Scene getCurrentScene() {
+        return currentScene;
+    }
+
+    public static void setCurrentScene(Scene scene) {
+        currentScene = scene;
+    }
+
     public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource(fxml + ".fxml"));
+        Scene newScene = new Scene(loader.load());
+
+        // Obtém o Stage a partir da cena atual, caso esteja definido
+        Stage stage = (Stage) MainApplication.getCurrentScene().getWindow();
+        if (stage != null) {
+            stage.setScene(newScene);
+        } else {
+            System.out.println("Erro: Stage não está definido.");
+        }
     }
 
     //Método para carregar o arquivo FXML e garantir que retorna um Parent
