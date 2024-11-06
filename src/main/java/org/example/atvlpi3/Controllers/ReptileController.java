@@ -21,6 +21,9 @@ public class ReptileController {
     private Button btnToShow;
 
     @FXML
+    private Button btnBackMenu;
+
+    @FXML
     private AnchorPane container_birds;
 
     @FXML
@@ -63,7 +66,8 @@ public class ReptileController {
             // Limpa os campos após o cadastro
             //limparCampos();
 
-        } catch (NumberFormatException e) {
+        } catch (
+                NumberFormatException e) {
             // Exibe alerta caso o valor de peso não seja numérico
             exibirAlerta("Erro de Cadastro", "Peso deve ser um valor numérico.");
         }
@@ -116,5 +120,22 @@ public class ReptileController {
         reptile_specie_up.clear();
         reptile_weight_up.clear();
         reptile_habitat_up.clear();
+    }
+
+
+    //Metodos para interagir
+
+    public String makeSound() {
+        return "Hiss!";
+    }
+
+    //@Override
+    public void move() {
+        System.out.println("Slithering...");
+    }
+
+    //@Override
+    public void feed() {
+        System.out.println("Eating insects...");
     }
 }
