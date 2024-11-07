@@ -9,8 +9,8 @@
 <AnchorPane
         xmlns="http://javafx.com/javafx"
         xmlns:fx="http://javafx.com/fxml"
-        fx:controller="org.example.atvlpi3.Feline"
-        prefHeight="400.0"
-        prefWidth="600.0">
+        fx:controller="org.example.atvlpi3.Controllers.FelineController"
+        prefHeight="540.0"
+        prefWidth="340.0">
 
 </AnchorPane>
