@@ -11,6 +11,7 @@ module org.example.atvlpi3 {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires jdk.compiler;
+    requires java.sql;
 
     opens org.example.atvlpi3 to javafx.fxml;
     exports org.example.atvlpi3;
