@@ -22,11 +22,32 @@ public class ReptileShowController {
     private Button btnMove;
     @FXML
     private Button btnFeed;
+    @FXML
+    private Label labelMakeSound;
+    @FXML
+    private Label labelMove;
+    @FXML
+    private Label labelFeed;
 
 
     public void setReptileDetails(Reptile reptile) {
         speciesLabel.setText("Espécie: " + reptile.getSpecies());
         habitatLabel.setText("Habitat: " + reptile.getHabitat());
         weightLabel.setText("Peso: " + reptile.getWeight() + " kg");
+    }
+
+    //@Override
+    public void makeSound() {
+        labelMakeSound.setText("Hiss...");
+    }
+
+    //@Override
+    public void move() {
+        labelMove.setText("Slithering...");
+    }
+
+    //@Override
+    public void feed() {
+        labelFeed.setText("Nhac nhac!");
     }
 }
