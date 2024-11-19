@@ -4,17 +4,15 @@ public class Feline implements Animal {
     private String species;
     private String habitat;
     private double weight;
-    private double maxSpeed;
 
     // Construtor
-    public Feline(String species, String habitat, double weight, String furColor, double maxSpeed) {
+    public Feline(String species, String habitat, double weight) {
         this.species = species;
         this.habitat = habitat;
         this.weight = weight;
-        this.maxSpeed = maxSpeed;
     }
 
-    // Métodos da interface
+    //getters
     @Override
     public String getSpecies() {
         return species;
@@ -35,21 +33,8 @@ public class Feline implements Animal {
         System.out.println("O felino está rugindo ou miando!");
     }
 
-    public void move() {
-        System.out.println("O felino está se movendo rapidamente com uma velocidade de " + maxSpeed + " km/h.");
-    }
-
     public void feed() {
         System.out.println("O felino está se alimentando de carne.");
     }
 
-    // Getters e setters
-
-    public double getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(double maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
 }
