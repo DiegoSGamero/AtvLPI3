@@ -72,6 +72,19 @@ public class MenuController {
     private void goToFelineScreen() {
         // Código para navegar para a tela de Felino (Feline)
         System.out.println("Navegando para a tela de Felino");
+        try {
+            // Carrega o arquivo FXML da tela
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/feline.fxml"));
+            Parent root = loader.load();
+
+            // Obtém a cena atual e troca para a nova cena
+            Stage stage = (Stage) classDropdown.getScene().getWindow(); // Obtém a janela atual
+            Scene scene = new Scene(root); // Cria uma nova cena com o layout carregado
+            stage.setScene(scene); // Define a nova cena na janela
+            stage.show(); // Exibe a nova tela
+        } catch (IOException e) {
+            e.printStackTrace(); // Exibe o erro caso o arquivo FXML não seja encontrado
+        }
     }
 }
 

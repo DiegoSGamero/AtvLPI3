@@ -16,7 +16,8 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Carregar o arquivo FXML corretamente
-        scene = new Scene(loadFXML("reptile.fxml"), 340, 540);
+        scene = new Scene(loadFXML("menu-view.fxml"), 340, 540);
+        currentScene = scene;
         stage.setTitle("LPI Application!");
         stage.setScene(scene);
         stage.show();
@@ -33,7 +34,7 @@ public class MainApplication extends Application {
     }
 
     public static void setRoot(String fxml) throws IOException {
-        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource(fxml + ".fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/" + fxml + ".fxml"));
         Scene newScene = new Scene(loader.load());
 
         // Obtém o Stage a partir da cena atual, caso esteja definido
@@ -47,12 +48,12 @@ public class MainApplication extends Application {
 
     //Método para carregar o arquivo FXML e garantir que retorna um Parent
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/" + fxml));
         return fxmlLoader.load();  // raiz é do tipo Parent
     }
 
     public static void main(String[] args) {
-        launch(args);
         ConexaoDao.testConnection();
+        launch(args);
     }
 }

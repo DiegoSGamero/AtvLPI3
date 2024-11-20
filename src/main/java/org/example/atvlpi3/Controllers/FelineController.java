@@ -39,8 +39,6 @@ public class FelineController  {
     @FXML
     private Button btnBackMenu;
 
-    private Feline felineCadastrado;
-
     // Método para cadastrar o réptil
     private void cadastrarReptil() {
         try {
@@ -59,7 +57,7 @@ public class FelineController  {
             double peso = Double.parseDouble(pesoStrFeline);
 
             // Criação da instância de Reptile
-            felineCadastrado = new Feline(especieFeline, habitatFeline, peso);
+            Feline felineCadastrado = new Feline(especieFeline, habitatFeline, peso);
 
             // Exibe uma mensagem de sucesso
             exibirAlerta("Cadastro Concluído", "Felino cadastrado com sucesso:\n" + felineCadastrado.toString());
