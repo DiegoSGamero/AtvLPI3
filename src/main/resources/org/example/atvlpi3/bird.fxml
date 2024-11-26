@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane
-        xmlns="http://javafx.com/javafx"
-        xmlns:fx="http://javafx.com/fxml"
-        fx:controller="org.example.atvlpi3.Controllers.BirdController"
-        prefHeight="540.0" prefWidth="340.0">
 
+<AnchorPane prefHeight="540.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.BirdController">
+   <children>
+      <Label layoutX="39.0" layoutY="29.0" text="Cadastre uma Ave aqui!">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldSpecie" layoutX="84.0" layoutY="157.0" />
+      <TextField fx:id="fieldHabitat" layoutX="85.0" layoutY="234.0" />
+      <TextField fx:id="fieldWeight" layoutX="85.0" layoutY="321.0" />
+      <Button fx:id="btnUpBird" layoutX="126.0" layoutY="384.0" mnemonicParsing="false" text="Cadastrar" />
+      <Button fx:id="btnShowBird" layoutX="122.0" layoutY="436.0" mnemonicParsing="false" style="-fx-background-color: #889C58; -fx-border-radius: 4; -fx-border-color: #273104;" text="Ver animal" />
+      <Label layoutX="84.0" layoutY="128.0" text="Epécie">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="210.0" text="Habitat">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="296.0" text="Peso">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBackMenu" layoutX="39.0" layoutY="490.0" mnemonicParsing="false" style="-fx-background-radius: 16;" text="Voltar">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
