@@ -1,13 +1,13 @@
 package org.example.atvlpi3.models;
 
 public class Feline implements Animal {
-    private String species;
+    private String specie;
     private String habitat;
     private double weight;
 
     // Construtor
     public Feline(String species, String habitat, double weight) {
-        this.species = species;
+        this.specie = species;
         this.habitat = habitat;
         this.weight = weight;
     }
@@ -15,7 +15,7 @@ public class Feline implements Animal {
     //getters
     @Override
     public String getSpecies() {
-        return species;
+        return specie;
     }
 
     @Override
