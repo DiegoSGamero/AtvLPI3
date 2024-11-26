@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.models.Feline;
 import org.example.atvlpi3.models.Reptile;
 
@@ -39,8 +38,9 @@ public class FelineController  {
     @FXML
     private Button btnBackMenu;
 
-    // Método para cadastrar o réptil
-    private void cadastrarReptil() {
+    //meth para cadastro de felino
+    @FXML
+    private void cadastrarFeline() {
         try {
             // Captura os valores dos campos de texto
             String especieFeline = fieldSpecie.getText();
@@ -63,7 +63,7 @@ public class FelineController  {
             exibirAlerta("Cadastro Concluído", "Felino cadastrado com sucesso:\n" + felineCadastrado.toString());
 
             // Limpa os campos após o cadastro
-            //limparCampos();
+            limparCampos();
 
         } catch (
                 NumberFormatException e) {
@@ -115,5 +115,11 @@ public class FelineController  {
             e.printStackTrace();
             System.out.println("Erro ao carregar a cena do menu.");
         }
+    }
+    //meth p limpar campos
+    private void limparCampos() {
+        fieldSpecie.clear();
+        fieldWeight.clear();
+        fieldHabitat.clear();
     }
 }
