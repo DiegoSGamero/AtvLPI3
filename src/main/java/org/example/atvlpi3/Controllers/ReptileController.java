@@ -11,6 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.atvlpi3.MainApplication;
+import org.example.atvlpi3.dao.FelineDao;
+import org.example.atvlpi3.dao.ReptileDao;
 import org.example.atvlpi3.models.Reptile;
 
 import java.io.IOException;
@@ -62,6 +64,10 @@ public class ReptileController {
 
             // Exibe uma mensagem de sucesso
             exibirAlerta("Cadastro Concluído", "Réptil cadastrado com sucesso:\n" + reptileCadastrado.toString());
+
+            //Persistencia no banco
+            ReptileDao felineDao = new ReptileDao();
+            felineDao.saveRetile(reptileCadastrado);
 
             // Limpa os campos após o cadastro
             //limparCampos();
