@@ -1,6 +1,7 @@
 package org.example.atvlpi3.Controllers;
 
 import org.example.atvlpi3.MainApplication;
+import org.example.atvlpi3.dao.FelineDao;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -58,6 +59,10 @@ public class FelineController  {
 
             // Criação da instância de Reptile
             Feline felineCadastrado = new Feline(especieFeline, habitatFeline, peso);
+
+            //Persistencia no banco
+            FelineDao felineDao = new FelineDao();
+            felineDao.saveFeline(felineCadastrado);
 
             // Exibe uma mensagem de sucesso
             exibirAlerta("Cadastro Concluído", "Felino cadastrado com sucesso:\n" + felineCadastrado.toString());
