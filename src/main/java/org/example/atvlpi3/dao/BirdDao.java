@@ -21,10 +21,10 @@ public class BirdDao {
             stmt.setDouble(3, bird.getWeight());
             stmt.executeUpdate();
 
-            System.out.println("Reptil salvo com sucesso!");
+            System.out.println("Ave salva com sucesso!");
 
         } catch (SQLException e) {
-            System.err.println("Erro ao salvar o Reptile: " + e.getMessage());
+            System.err.println("Erro ao salvar Ave: " + e.getMessage());
         }
     }
 
