@@ -8,7 +8,7 @@ public class Reptile implements Animal {
     private String habitat;
     private double weight;
 
-    //contrutor
+    //construtor
     public Reptile(String species, String habitat, double weight) {
         this.species = species;
         this.habitat = habitat;
