@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.example.atvlpi3.models.Feline;
-import org.example.atvlpi3.models.Reptile;
 
 import java.io.IOException;
 
@@ -39,9 +38,11 @@ public class FelineController  {
     @FXML
     private Button btnBackMenu;
 
+    private Feline felineCadastrado;
+
     //meth para cadastro de felino
     @FXML
-    private void cadastrarFeline() {
+    public void cadastrarFeline() {
         try {
             // Captura os valores dos campos de texto
             String especieFeline = fieldSpecie.getText();
@@ -57,8 +58,8 @@ public class FelineController  {
             // Conversão do peso para double
             double peso = Double.parseDouble(pesoStrFeline);
 
-            // Criação da instância de Reptile
-            Feline felineCadastrado = new Feline(especieFeline, habitatFeline, peso);
+            // Criação da instância de Feline
+            felineCadastrado = new Feline(especieFeline, habitatFeline, peso);
 
             //Persistencia no banco
             FelineDao felineDao = new FelineDao();
@@ -127,4 +128,45 @@ public class FelineController  {
         fieldWeight.clear();
         fieldHabitat.clear();
     }
+
+    public String makeSound() {
+        return "Raaooow!";
+    }
+
+    //@Override
+    public void move() {
+        System.out.println("Correndo...");
+    }
+
+    //@Override
+    public void feed() {
+        System.out.println("Comendo...");
+    }
+
+    //ir para pagina dos metdos
+    public void rootShowFeline() {
+        if (felineCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um réptil antes de visualizar os detalhes.");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/felineShow.fxml"));
+            Parent root = loader.load();
+
+            FelineShowController controller = loader.getController();
+            controller.setFelineDetails(felineCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Felino");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
+    }
+
 }

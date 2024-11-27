@@ -66,8 +66,8 @@ public class ReptileController {
             exibirAlerta("Cadastro Concluído", "Réptil cadastrado com sucesso:\n" + reptileCadastrado.toString());
 
             //Persistencia no banco
-            ReptileDao felineDao = new ReptileDao();
-            felineDao.saveRetile(reptileCadastrado);
+            ReptileDao reptileDao = new ReptileDao();
+            reptileDao.saveRetile(reptileCadastrado);
 
             // Limpa os campos após o cadastro
             //limparCampos();
