@@ -91,7 +91,7 @@ public class FelineController  {
     // Inicialização do controller
     @FXML
     public void initialize() {
-        // Conectar o botão ao método de cadastro
+        // Conectar o botão ao métdo de cadastro
         //reptile_up_btn.setOnAction(event -> cadastrarReptil());
         //btnToShow.setOnAction(event -> rootShowReptile());
         btnBackMenu.setOnAction(event -> {

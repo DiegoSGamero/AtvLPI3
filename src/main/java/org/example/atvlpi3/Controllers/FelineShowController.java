@@ -27,6 +27,15 @@ public class FelineShowController {
     private Label weightLabel;
 
     @FXML
+    private Label feedFeline;
+
+    @FXML
+    private Label moveFeline;
+
+    @FXML
+    private Label soundFeline;
+
+    @FXML
     public void setFelineDetails(Feline feline) {
         speciesLabel.setText("Espécie: " + feline.getSpecies());
         habitatLabel.setText("Habitat: " + feline.getHabitat());
@@ -35,16 +44,16 @@ public class FelineShowController {
 
     @FXML
     void feed(ActionEvent event) {
-
+        feedFeline.setText("nhac nhac...");
     }
 
     @FXML
     void makeSound(ActionEvent event) {
-
+        soundFeline.setText("Rooaoaoow!");
     }
 
     @FXML
     void move(ActionEvent event) {
-
+        moveFeline.setText("Correndo...");
     }
 }

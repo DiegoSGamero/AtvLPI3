@@ -18,7 +18,7 @@
       <TextField fx:id="fieldHabitat" layoutX="96.0" layoutY="234.0" />
       <TextField fx:id="fieldWeight" layoutX="96.0" layoutY="321.0" />
       <Button fx:id="btnUpFeline" layoutX="136.0" layoutY="411.0" mnemonicParsing="false" onAction="#cadastrarFeline" text="Cadastrar" />
-      <Button fx:id="btnShowFeline" layoutX="134.0" layoutY="453.0" mnemonicParsing="false" style="-fx-background-color: #889C58; -fx-border-radius: 4; -fx-border-color: #273104;" text="Ver animal" />
+      <Button fx:id="btnShowFeline" layoutX="134.0" layoutY="453.0" mnemonicParsing="false" onAction="#rootShowFeline" style="-fx-background-color: #889C58; -fx-border-radius: 4; -fx-border-color: #273104;" text="Ver animal" />
       <Label layoutX="95.0" layoutY="128.0" text="Epécie">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
