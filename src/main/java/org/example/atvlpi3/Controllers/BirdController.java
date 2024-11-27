@@ -1,5 +1,6 @@
 package org.example.atvlpi3.Controllers;
 
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.BirdDao;
 
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.atvlpi3.models.Bird;
+import org.example.atvlpi3.models.Feline;
 
 import java.io.IOException;
 
@@ -34,6 +36,8 @@ public class BirdController {
     @FXML
     private TextField fieldWeight;
 
+    private Bird birdCadastrado;
+
     @FXML
     private void cadastrarAve() {
         try {
@@ -52,7 +56,7 @@ public class BirdController {
             double peso = Double.parseDouble(pesoStrBird);
 
             // Criação da instância de Reptile
-            Bird birdCadastrado = new Bird(especieBird, habitatBird, peso);
+            birdCadastrado = new Bird(especieBird, habitatBird, peso);
 
             //Persistencia no banco
             BirdDao birdDao = new BirdDao();
@@ -62,7 +66,7 @@ public class BirdController {
             exibirAlerta("Cadastro Concluído", "Ave cadastrada com sucesso:\n" + birdCadastrado.toString());
 
             // Limpa os campos após o cadastro
-            limparCampos();
+            //limparCampos();
 
         } catch (
                 NumberFormatException e) {
@@ -71,7 +75,7 @@ public class BirdController {
         }
     }
 
-    // Método para exibir alertas
+    // Métdo para exibir alertas
     private void exibirAlerta(String titulo, String mensagem) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
@@ -84,9 +88,7 @@ public class BirdController {
     // Inicialização do controller
     @FXML
     public void initialize() {
-        // Conectar o botão ao método de cadastro
-        //reptile_up_btn.setOnAction(event -> cadastrarReptil());
-        //btnToShow.setOnAction(event -> rootShowReptile());
+        // Conectar o botão ao métdo de cadastro
         btnBackMenu.setOnAction(event -> {
             try {
                 backToMenu();
@@ -121,5 +123,31 @@ public class BirdController {
         fieldSpecie.clear();
         fieldWeight.clear();
         fieldHabitat.clear();
+    }
+
+    //ir para pagina dos metdos
+    public void rootShowBird() {
+        if (birdCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um pássaro antes de visualizar os detalhes.");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/birdShow.fxml"));
+            Parent root = loader.load();
+
+            BirdShowController controller = loader.getController();
+            controller.setBirdDetails(birdCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Pássaro");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 }
