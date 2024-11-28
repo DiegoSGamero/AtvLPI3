@@ -1,6 +1,10 @@
 package org.example.atvlpi3.models;
 
 public class Batata implements Alimento {
+    String tipo;
+    Double peso;
+    String prato;
+
     @Override
     public void comprar() {
 

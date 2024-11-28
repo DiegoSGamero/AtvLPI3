@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane
-        xmlns="http://javafx.com/javafx"
-        xmlns:fx="http://javafx.com/fxml"
-        fx:controller="org.example.atvlpi3.Controllers.ArrozController"
-        prefHeight="540.0" prefWidth="340.0">
 
+<AnchorPane prefHeight="540.0" prefWidth="340.0" style="-fx-background-color: #FFE8A1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.ArrozController">
+   <children>
+      <Text fill="#534fc3" layoutX="43.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual arroz vai fazer hoje?" wrappingWidth="264.357421875">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fieldType" layoutX="95.0" layoutY="145.0" />
+      <TextField fx:id="fieldWeight" layoutX="96.0" layoutY="222.0" />
+      <TextField fx:id="fieldRecipe" layoutX="96.0" layoutY="309.0" />
+      <Button fx:id="btnUpArroz" layoutX="137.0" layoutY="375.0" mnemonicParsing="false" onAction="#cadastrarArroz" text="Cadastrar" />
+      <Button fx:id="btnShowArroz" layoutX="147.0" layoutY="427.0" mnemonicParsing="false" onAction="#rootShowArroz" style="-fx-background-color: #F4A261; -fx-border-radius: 4; -fx-border-color: #ffffff;" text="Fazer" textFill="WHITE" />
+      <Label layoutX="95.0" layoutY="116.0" text="Tipo" textFill="#534fc3">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="198.0" text="Peso" textFill="#534fc3">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="284.0" text="Qual prato?" textFill="#534fc3">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBackMenu" layoutX="59.0" layoutY="481.0" mnemonicParsing="false" style="-fx-background-radius: 16;" text="Voltar">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
