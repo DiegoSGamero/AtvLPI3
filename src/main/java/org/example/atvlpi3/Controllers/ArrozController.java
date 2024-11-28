@@ -97,14 +97,14 @@ public class ArrozController {
             double peso = Double.parseDouble(pesoStrArroz);
 
             // Criação da instância de Reptile
-            arrozCadastrado = new Bird(tipoArroz, peso, pratoArroz);
+            arrozCadastrado = new Arroz(tipoArroz, peso, pratoArroz);
 
             //Persistencia no banco
             ArrozDao arrozDao = new ArrozDao();
             arrozDao.saveArroz(arrozCadastrado);
 
             // Exibe uma mensagem de sucesso
-            exibirAlerta("Cadastro Concluído", "Ave cadastrada com sucesso:\n" + birdCadastrado.toString());
+            exibirAlerta("Cadastro Concluído", "Ave cadastrada com sucesso:\n" + arrozCadastrado.toString());
 
             // Limpa os campos após o cadastro
             //limparCampos();

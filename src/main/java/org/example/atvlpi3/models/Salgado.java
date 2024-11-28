@@ -1,6 +1,6 @@
 package org.example.atvlpi3.models;
 
-public class Batata implements Alimento {
+public class Salgado implements Alimento {
     String tipo;
     Double peso;
     String prato;

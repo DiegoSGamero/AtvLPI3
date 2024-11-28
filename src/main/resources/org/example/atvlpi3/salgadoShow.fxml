@@ -9,7 +9,7 @@
 <AnchorPane
         xmlns="http://javafx.com/javafx"
         xmlns:fx="http://javafx.com/fxml"
-        fx:controller="org.example.atvlpi3.Controllers.XuxuController"
+        fx:controller="org.example.atvlpi3.Controllers.SalgadoShowController"
         prefHeight="540.0" prefWidth="340.0">
 
 </AnchorPane>

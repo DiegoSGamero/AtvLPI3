@@ -1,4 +1,4 @@
 package org.example.atvlpi3.Controllers;
 
-public class BatataController {
+public class SalgadoController {
 }
