@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CaminhaoDao {
     public void salvarCaminhao(Caminhao caminhao) {
-        String sql = "INSERT INTO carro (marca, modelo, cor) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO caminhao (marca, modelo, cor) VALUES (?, ?, ?)";
 
         try (Connection conn = ConexaoDao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
