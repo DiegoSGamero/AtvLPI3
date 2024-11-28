@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.CaminhaoDao;
 import org.example.atvlpi3.dao.MotoDao;
 import org.example.atvlpi3.models.Moto;
@@ -100,7 +101,7 @@ public class MotoController {
             motoDao.salvarMoto(motoCadastrado);
 
             // Exibe uma mensagem de sucesso
-            exibirAlerta("Cadastro Concluído", "Carro cadastrado com sucesso:\n" + motoCadastrado.toString());
+            exibirAlerta("Cadastro Concluído", "Moto cadastrada com sucesso:\n" + motoCadastrado.toString());
 
         } catch (
                 NumberFormatException e) {
@@ -109,6 +110,27 @@ public class MotoController {
 
     @FXML
     void rootShowMoto(ActionEvent event) {
+        if (motoCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre uma moto antes de visualizar os detalhes.");
+            return;
+        }
 
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/motoShow.fxml"));
+            Parent root = loader.load();
+
+            MotoShowController controller = loader.getController();
+            controller.setMotoDetails(motoCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes da Moto");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 }
