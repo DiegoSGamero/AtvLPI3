@@ -22,7 +22,7 @@ public class ArrozDao {
 
         } catch (
                 SQLException e) {
-            System.err.println("Erro ao salvar Ave: " + e.getMessage());
+            System.err.println("Erro ao salvar Arroz: " + e.getMessage());
         }
     }
 }

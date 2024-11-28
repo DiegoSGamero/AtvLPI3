@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.dao.SalgadoDao;
+import org.example.atvlpi3.models.Salgado;
 
 import java.io.IOException;
 
@@ -31,6 +33,9 @@ public class SalgadoController {
 
     @FXML
     private TextField fieldWeight;
+
+    @FXML
+    private Salgado salgadoCadastrado;
 
     // Métdo para exibir alertas
     private void exibirAlerta(String titulo, String mensagem) {
@@ -58,6 +63,7 @@ public class SalgadoController {
         }
     }
 
+    // Inicialização do controller
     @FXML
     public void initialize() {
         // Conectar o botão ao métdo de cadastro
@@ -74,7 +80,39 @@ public class SalgadoController {
 
     @FXML
     void cadastrarSalgado(ActionEvent event) {
+        try {
+            // Captura os valores dos campos de texto
+            String tipoSalgado = fieldType.getText();
+            String pesoStrSalgado = fieldWeight.getText();
+            String saborSalgado = fieldFlavour.getText();
 
+            // Validação básica dos dados (por exemplo, se os campos estão preenchidos)
+            if (tipoSalgado.isEmpty() || pesoStrSalgado.isEmpty() || saborSalgado.isEmpty()) {
+                exibirAlerta("Erro de Cadastro", "Todos os campos devem ser preenchidos.");
+                return;
+            }
+
+            // Conversão do peso para double
+            double peso = Double.parseDouble(pesoStrSalgado);
+
+            // Criação da instância de Reptile
+            salgadoCadastrado = new Salgado(tipoSalgado, peso, saborSalgado);
+
+            //Persistencia no banco
+            SalgadoDao salgadoDao = new SalgadoDao();
+            salgadoDao.saveSalgado(salgadoCadastrado);
+
+            // Exibe uma mensagem de sucesso
+            exibirAlerta("Cadastro Concluído", "Salgado cadastrado com sucesso:\n" + salgadoCadastrado.toString());
+
+            // Limpa os campos após o cadastro
+            //limparCampos();
+
+        } catch (
+                NumberFormatException e) {
+            // Exibe alerta caso o valor de peso não seja numérico
+            exibirAlerta("Erro de Cadastro", "Peso deve ser um valor numérico.");
+        }
     }
 
     @FXML
