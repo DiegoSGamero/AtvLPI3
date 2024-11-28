@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
@@ -13,29 +15,29 @@
 
 <AnchorPane fx:id="container_birds" prefHeight="540.0" prefWidth="340.0" style="-fx-background-radius: 4;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.ReptileController">
    <children>
-      <Text fill="#325133" layoutX="51.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre seu Réptil aqui">
+      <Text fill="#325133" layoutX="51.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre seu Réptil aqui">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Text>
-      <Label layoutX="51.0" layoutY="128.0" text="Espécie" textFill="#325133">
+      <Label layoutX="53.0" layoutY="195.0" text="Espécie" textFill="#325133">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="229.0" text="Peso Médio" textFill="#325133">
+      <Label layoutX="51.0" layoutY="262.0" text="Peso Médio" textFill="#325133">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="331.0" text="Habitat Natural" textFill="#325133">
+      <Label layoutX="51.0" layoutY="334.0" text="Habitat Natural" textFill="#325133">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="reptile_specie_up" layoutX="51.0" layoutY="160.0" prefHeight="25.0" prefWidth="238.0" />
+      <TextField fx:id="reptile_specie_up" layoutX="53.0" layoutY="220.0" prefHeight="25.0" prefWidth="238.0" />
       <TextField fx:id="reptile_habitat_up" layoutX="51.0" layoutY="360.0" prefHeight="25.0" prefWidth="238.0" />
-      <TextField fx:id="reptile_weight_up" layoutX="51.0" layoutY="258.0" prefHeight="25.0" prefWidth="238.0" />
+      <TextField fx:id="reptile_weight_up" layoutX="51.0" layoutY="288.0" prefHeight="25.0" prefWidth="238.0" />
       <Button fx:id="reptile_up_btn" layoutX="127.0" layoutY="424.0" mnemonicParsing="false" text="Cadastrar">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
@@ -61,6 +63,18 @@
             <Font name="Arial Rounded MT Bold" size="10.0" />
          </font>
       </Button>
+      <ImageView fitHeight="112.0" fitWidth="200.0" layoutX="61.0" layoutY="68.0">
+         <image>
+            <Image url="@../../../Images/repteis.jpg" />
+         </image>
+         <effect>
+            <DropShadow height="16.0" radius="7.5" width="16.0">
+               <color>
+                  <Color red="0.31688597798347473" green="0.6710526347160339" blue="0.45855262875556946" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
    </children>
    <padding>
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
