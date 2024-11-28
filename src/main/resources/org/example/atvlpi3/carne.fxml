@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="540.0" prefWidth="340.0" style="-fx-background-color: #FFE8A1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.CarneController">
    <children>
       <Text fill="#534fc3" layoutX="38.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual carne vai fazer hoje?" wrappingWidth="264.357421875">
@@ -18,7 +17,7 @@
       <TextField fx:id="fieldType" layoutX="105.0" layoutY="155.0" />
       <TextField fx:id="fieldWeight" layoutX="106.0" layoutY="232.0" />
       <TextField fx:id="fieldRecipe" layoutX="106.0" layoutY="319.0" />
-      <Button fx:id="btnUpCarne" layoutX="147.0" layoutY="385.0" mnemonicParsing="false" onAction="#cadastrarArroz" text="Cadastrar" />
+      <Button fx:id="btnUpCarne" layoutX="147.0" layoutY="385.0" mnemonicParsing="false" onAction="#cadastrarCarne" text="Cadastrar" />
       <Button fx:id="btnShowCarne" layoutX="157.0" layoutY="437.0" mnemonicParsing="false" onAction="#rootShowCarne" style="-fx-background-color: #F4A261; -fx-border-radius: 4; -fx-border-color: #ffffff;" text="Fazer" textFill="WHITE" />
       <Label layoutX="105.0" layoutY="126.0" text="Tipo" textFill="#534fc3">
          <font>

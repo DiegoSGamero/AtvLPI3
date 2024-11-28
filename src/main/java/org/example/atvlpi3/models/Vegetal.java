@@ -5,6 +5,26 @@ public class Vegetal implements Alimento{
     Double peso;
     String prato;
 
+    //construtor
+    public Vegetal (String tipo, double peso, String prato) {
+        this.tipo = tipo;
+        this.peso = peso;
+        this.prato = prato;
+    }
+
+    //getters
+    public String getTipo() {
+        return tipo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public String getPrato() {
+        return prato;
+    }
+
     @Override
     public void comprar() {
 
