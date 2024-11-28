@@ -1,4 +1,4 @@
 package org.example.atvlpi3.dao;
 
-public class XuxuDao {
+public class SalgadoDao {
 }

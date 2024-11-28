@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.dao.VegetalDao;
+import org.example.atvlpi3.models.Vegetal;
 
 import java.io.IOException;
 
@@ -31,6 +33,9 @@ public class VegetalController {
 
     @FXML
     private TextField fieldWeight;
+
+    @FXML
+    private Vegetal vegetalCadastrado;
 
     // Métdo para exibir alertas
     private void exibirAlerta(String titulo, String mensagem) {
@@ -58,6 +63,7 @@ public class VegetalController {
         }
     }
 
+    // Inicialização do controller
     @FXML
     public void initialize() {
         // Conectar o botão ao métdo de cadastro
@@ -74,8 +80,41 @@ public class VegetalController {
 
     @FXML
     void cadastrarVegetal(ActionEvent event) {
+        try {
+            // Captura os valores dos campos de texto
+            String tipoVegetal = fieldType.getText();
+            String pesoStrVegetal = fieldWeight.getText();
+            String pratoVegetal = fieldRecipe.getText();
 
+            // Validação básica dos dados (por exemplo, se os campos estão preenchidos)
+            if (tipoVegetal.isEmpty() || pesoStrVegetal.isEmpty() || pratoVegetal.isEmpty()) {
+                exibirAlerta("Erro de Cadastro", "Todos os campos devem ser preenchidos.");
+                return;
+            }
+
+            // Conversão do peso para double
+            double peso = Double.parseDouble(pesoStrVegetal);
+
+            // Criação da instância de Reptile
+            vegetalCadastrado = new Vegetal(tipoVegetal, peso, pratoVegetal);
+
+            //Persistencia no banco
+            VegetalDao vegetalDao = new VegetalDao();
+            vegetalDao.saveVegetal(vegetalCadastrado);
+
+            // Exibe uma mensagem de sucesso
+            exibirAlerta("Cadastro Concluído", "Vegetal cadastrado com sucesso:\n" + vegetalCadastrado.toString());
+
+            // Limpa os campos após o cadastro
+            //limparCampos();
+
+        } catch (
+                NumberFormatException e) {
+            // Exibe alerta caso o valor de peso não seja numérico
+            exibirAlerta("Erro de Cadastro", "Peso deve ser um valor numérico.");
+        }
     }
+
 
     @FXML
     void rootShowVegetal(ActionEvent event) {
