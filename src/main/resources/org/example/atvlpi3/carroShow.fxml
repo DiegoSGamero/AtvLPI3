@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane
-        xmlns="http://javafx.com/javafx"
-        xmlns:fx="http://javafx.com/fxml"
-        fx:controller="org.example.atvlpi3.Controllers.CarroShowController"
-        prefHeight="540.0" prefWidth="340.0">
 
+<AnchorPane prefHeight="540.0" prefWidth="340.0" style="-fx-background-color: #5A9BD3;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.CarroShowController">
+   <children>
+      <Text fill="WHITE" layoutX="132.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carro">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="marcaLabel" layoutX="90.0" layoutY="106.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="modeloLabel" layoutX="90.0" layoutY="174.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="corLabel" layoutX="90.0" layoutY="243.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btbnLigar" layoutX="86.0" layoutY="335.0" mnemonicParsing="false" onAction="#ligarCarro" prefHeight="25.0" prefWidth="80.0" text="Ligar" />
+      <Button fx:id="btnAcelerar" layoutX="86.0" layoutY="390.0" mnemonicParsing="false" onAction="#acelerarCarro" prefHeight="25.0" prefWidth="80.0" text="Acelerar" />
+      <Button fx:id="btnFrear" layoutX="86.0" layoutY="449.0" mnemonicParsing="false" onAction="#frearCarro" prefHeight="25.0" prefWidth="80.0" text="Frear" />
+      <Label fx:id="startCar" layoutX="200.0" layoutY="339.0" textFill="WHITE" />
+      <Label fx:id="aceleraCar" layoutX="200.0" layoutY="394.0" textFill="WHITE" />
+      <Label fx:id="stopCar" layoutX="200.0" layoutY="453.0" textFill="WHITE" />
+   </children>
 </AnchorPane>
