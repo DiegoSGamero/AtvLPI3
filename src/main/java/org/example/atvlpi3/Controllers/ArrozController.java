@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.ArrozDao;
 import org.example.atvlpi3.dao.BirdDao;
 import org.example.atvlpi3.models.Arroz;
@@ -118,6 +119,27 @@ public class ArrozController {
 
     @FXML
     void rootShowArroz(ActionEvent event) {
+        if (arrozCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um arroz antes de visualizar os detalhes.");
+            return;
+        }
 
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/arrozShow.fxml"));
+            Parent root = loader.load();
+
+            ArrozShowController controller = loader.getController();
+            controller.setArrozDetails(arrozCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Arroz");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 }
