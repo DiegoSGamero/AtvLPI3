@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ArrozDao {
     public void saveArroz(Arroz arroz) {
-        String sql = "INSERT INTO bird (tipo, peso, prato) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO arroz (tipo, peso, prato) VALUES (?, ?, ?)";
 
         try (Connection conn = ConexaoDao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -18,7 +18,7 @@ public class ArrozDao {
             stmt.setString(3, arroz.getPrato());
             stmt.executeUpdate();
 
-            System.out.println("Ave salva com sucesso!");
+            System.out.println("arroz salvo com sucesso!");
 
         } catch (
                 SQLException e) {

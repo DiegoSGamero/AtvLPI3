@@ -104,7 +104,7 @@ public class ArrozController {
             arrozDao.saveArroz(arrozCadastrado);
 
             // Exibe uma mensagem de sucesso
-            exibirAlerta("Cadastro Concluído", "Ave cadastrada com sucesso:\n" + arrozCadastrado.toString());
+            exibirAlerta("Cadastro Concluído", "Arroz cadastrado com sucesso:\n" + arrozCadastrado.toString());
 
             // Limpa os campos após o cadastro
             //limparCampos();
