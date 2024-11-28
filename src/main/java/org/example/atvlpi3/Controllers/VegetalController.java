@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.VegetalDao;
 import org.example.atvlpi3.models.Vegetal;
 
@@ -118,7 +119,28 @@ public class VegetalController {
 
     @FXML
     void rootShowVegetal(ActionEvent event) {
+        if (vegetalCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um vegetal antes de visualizar os detalhes.");
+            return;
+        }
 
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/vegetalShow.fxml"));
+            Parent root = loader.load();
+
+            VegetalShowController controller = loader.getController();
+            controller.setVegetalDetails(vegetalCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Vegetal");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 
 }

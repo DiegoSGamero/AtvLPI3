@@ -9,31 +9,31 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="340.0" style="-fx-background-color: #FFE8A1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.atvlpi3.Controllers.CarneShowController">
    <children>
-      <Text fill="#1b45c6" layoutX="147.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carne">
+      <Text fill="#1b45c6" layoutX="132.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carne">
          <font>
             <Font name="Arial Rounded MT Bold" size="24.0" />
          </font>
       </Text>
-      <Label fx:id="tipoLabel" layoutX="130.0" layoutY="146.0" text="Label" textFill="#1b45c6">
+      <Label fx:id="tipoLabel" layoutX="115.0" layoutY="134.0" text="Label" textFill="#1b45c6">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="pesoLabel" layoutX="130.0" layoutY="214.0" text="Label" textFill="#1b45c6">
+      <Label fx:id="pesoLabel" layoutX="115.0" layoutY="202.0" text="Label" textFill="#1b45c6">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="receitaLabel" layoutX="130.0" layoutY="283.0" text="Label" textFill="#1b45c6">
+      <Label fx:id="receitaLabel" layoutX="115.0" layoutY="271.0" text="Label" textFill="#1b45c6">
          <font>
             <Font name="Arial Rounded MT Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btbnComprar" layoutX="126.0" layoutY="375.0" mnemonicParsing="false" onAction="#comprarCarne" prefHeight="25.0" prefWidth="80.0" text="Comprar" />
-      <Button fx:id="btnCozinhar" layoutX="126.0" layoutY="430.0" mnemonicParsing="false" onAction="#cozinharCarne" prefHeight="25.0" prefWidth="80.0" text="Cozinhar" />
-      <Button fx:id="btnComer" layoutX="126.0" layoutY="489.0" mnemonicParsing="false" onAction="#comerCarne" prefHeight="25.0" prefWidth="80.0" text="Comer" />
-      <Label fx:id="comprando" layoutX="228.0" layoutY="379.0" textFill="#393183" />
-      <Label fx:id="cozinhando" layoutX="228.0" layoutY="434.0" textFill="#393183" />
-      <Label fx:id="comendo" layoutX="228.0" layoutY="493.0" textFill="#393183" />
+      <Button fx:id="btbnComprar" layoutX="63.0" layoutY="360.0" mnemonicParsing="false" onAction="#comprarCarne" prefHeight="25.0" prefWidth="80.0" text="Comprar" />
+      <Button fx:id="btnCozinhar" layoutX="63.0" layoutY="415.0" mnemonicParsing="false" onAction="#cozinharCarne" prefHeight="25.0" prefWidth="80.0" text="Cozinhar" />
+      <Button fx:id="btnComer" layoutX="63.0" layoutY="474.0" mnemonicParsing="false" onAction="#comerCarne" prefHeight="25.0" prefWidth="80.0" text="Comer" />
+      <Label fx:id="comprando" layoutX="165.0" layoutY="364.0" textFill="#393183" />
+      <Label fx:id="cozinhando" layoutX="165.0" layoutY="419.0" textFill="#393183" />
+      <Label fx:id="comendo" layoutX="165.0" layoutY="478.0" textFill="#393183" />
    </children>
 </AnchorPane>
