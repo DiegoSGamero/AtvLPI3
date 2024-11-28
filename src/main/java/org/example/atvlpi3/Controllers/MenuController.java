@@ -22,7 +22,7 @@ public class MenuController {
     @FXML
     private void initialize() {
         // Adiciona opções ao dropdown
-        classDropdown.getItems().addAll("Réptil", "Felino", "Pássaro");
+        classDropdown.getItems().addAll("Réptil", "Felino", "Pássaro", "Carro", "Moto", "Caminhao");
 
         // Define uma ação quando o usuário selecionar uma classe
         classDropdown.setOnAction(this::handleDropdownSelection);
@@ -40,6 +40,15 @@ public class MenuController {
                 break;
             case "Pássaro":
                 goToBirdScreen();
+                break;
+            case "Carro":
+                goToCarroScreen();
+                break;
+            case "Moto":
+                goToMotoScreen();
+                break;
+            case "Caminhao":
+                goToCaminhaoScreen();
                 break;
             default:
                 break;
@@ -88,6 +97,60 @@ public class MenuController {
         try {
             // Carrega o arquivo FXML da tela
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/feline.fxml"));
+            Parent root = loader.load();
+
+            // Obtém a cena atual e troca para a nova cena
+            Stage stage = (Stage) classDropdown.getScene().getWindow(); // Obtém a janela atual
+            Scene scene = new Scene(root); // Cria uma nova cena com o layout carregado
+            stage.setScene(scene); // Define a nova cena na janela
+            stage.show(); // Exibe a nova tela
+        } catch (IOException e) {
+            e.printStackTrace(); // Exibe o erro caso o arquivo FXML não seja encontrado
+        }
+    }
+
+    private void goToCarroScreen() {
+        // Código para navegar para a tela de carro
+        System.out.println("Navegando para a tela de Carro");
+        try {
+            // Carrega o arquivo FXML da tela
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/carro.fxml"));
+            Parent root = loader.load();
+
+            // Obtém a cena atual e troca para a nova cena
+            Stage stage = (Stage) classDropdown.getScene().getWindow(); // Obtém a janela atual
+            Scene scene = new Scene(root); // Cria uma nova cena com o layout carregado
+            stage.setScene(scene); // Define a nova cena na janela
+            stage.show(); // Exibe a nova tela
+        } catch (IOException e) {
+            e.printStackTrace(); // Exibe o erro caso o arquivo FXML não seja encontrado
+        }
+    }
+
+    private void goToMotoScreen() {
+        // Código para navegar para a tela de Felino (Feline)
+        System.out.println("Navegando para a tela de Moto");
+        try {
+            // Carrega o arquivo FXML da tela
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/moto.fxml"));
+            Parent root = loader.load();
+
+            // Obtém a cena atual e troca para a nova cena
+            Stage stage = (Stage) classDropdown.getScene().getWindow(); // Obtém a janela atual
+            Scene scene = new Scene(root); // Cria uma nova cena com o layout carregado
+            stage.setScene(scene); // Define a nova cena na janela
+            stage.show(); // Exibe a nova tela
+        } catch (IOException e) {
+            e.printStackTrace(); // Exibe o erro caso o arquivo FXML não seja encontrado
+        }
+    }
+
+    private void goToCaminhaoScreen() {
+        // Código para navegar para a tela de Felino (Feline)
+        System.out.println("Navegando para a tela de Caminhao");
+        try {
+            // Carrega o arquivo FXML da tela
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/atvlpi3/caminhao.fxml"));
             Parent root = loader.load();
 
             // Obtém a cena atual e troca para a nova cena
