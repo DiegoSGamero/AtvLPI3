@@ -146,7 +146,7 @@ public class FelineController  {
     //ir para pagina dos metdos
     public void rootShowFeline() {
         if (felineCadastrado == null) {
-            exibirAlerta("Aviso", "Cadastre um réptil antes de visualizar os detalhes.");
+            exibirAlerta("Aviso", "Cadastre um felino antes de visualizar os detalhes.");
             return;
         }
 
