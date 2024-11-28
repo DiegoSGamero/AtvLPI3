@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.CarneDao;
 import org.example.atvlpi3.models.Carne;
 
@@ -115,7 +116,28 @@ public class CarneController {
 
     @FXML
     void rootShowCarne(ActionEvent event) {
+        if (carneCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre uma carne antes de visualizar os detalhes.");
+            return;
+        }
 
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/carneShow.fxml"));
+            Parent root = loader.load();
+
+            CarneShowController controller = loader.getController();
+            controller.setCarneDetails(carneCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes da Carne");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 
 }
