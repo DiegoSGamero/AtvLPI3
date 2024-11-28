@@ -3,7 +3,7 @@ package org.example.atvlpi3.models;
 public class Salgado implements Alimento {
     String tipo;
     Double peso;
-    String prato;
+    String sabor;
 
     @Override
     public void comprar() {
