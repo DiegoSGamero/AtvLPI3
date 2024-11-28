@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.atvlpi3.MainApplication;
 import org.example.atvlpi3.dao.CaminhaoDao;
 import org.example.atvlpi3.dao.CarroDao;
 import org.example.atvlpi3.models.Caminhao;
@@ -100,7 +101,7 @@ public class CaminhaoController {
             caminhaoDao.salvarCaminhao(caminhaoCadastrado);
 
             // Exibe uma mensagem de sucesso
-            exibirAlerta("Cadastro Concluído", "Carro cadastrado com sucesso:\n" + caminhaoCadastrado.toString());
+            exibirAlerta("Cadastro Concluído", "Caminhao cadastrado com sucesso:\n" + caminhaoCadastrado.toString());
 
         } catch (
                 NumberFormatException e) {
@@ -109,7 +110,28 @@ public class CaminhaoController {
 
     @FXML
     void rootShowCaminhao(ActionEvent event) {
+        if (caminhaoCadastrado == null) {
+            exibirAlerta("Aviso", "Cadastre um caminhao antes de visualizar os detalhes.");
+            return;
+        }
 
+        try {
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("/org/example/atvlpi3/caminhaoShow.fxml"));
+            Parent root = loader.load();
+
+            CaminhaoShowController controller = loader.getController();
+            controller.setCaminhaoDetails(caminhaoCadastrado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Detalhes do Caminhão");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+            exibirAlerta("Erro", "Não foi possível carregar a tela de detalhes.");
+        }
     }
 
 }

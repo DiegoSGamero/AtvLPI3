@@ -124,7 +124,7 @@ public class CarroController {
             controller.setCarroDetails(carroCadastrado);
 
             Stage stage = new Stage();
-            stage.setTitle("Detalhes do Felino");
+            stage.setTitle("Detalhes do Carro");
             stage.setScene(new Scene(root));
             stage.show();
 
