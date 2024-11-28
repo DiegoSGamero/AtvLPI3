@@ -22,7 +22,7 @@ public class MenuController {
     @FXML
     private void initialize() {
         // Adiciona opções ao dropdown
-        classDropdown.getItems().addAll("Réptil", "Felino", "Pássaro", "Carro", "Moto", "Caminhao", "Arroz", "Batata", "Carne", "Xuxu");
+        classDropdown.getItems().addAll("Réptil", "Felino", "Pássaro", "Carro", "Moto", "Caminhao", "Arroz", "Carne", "Vegetal", "Salgado");
 
         // Define uma ação quando o usuário selecionar uma classe
         classDropdown.setOnAction(this::handleDropdownSelection);
@@ -52,6 +52,15 @@ public class MenuController {
                 break;
             case "Arroz":
                 goToArrozScreen();
+                break;
+            case "Carne":
+                goToCarneScreen();
+                break;
+            case "Vegetal":
+                goToVegetalScreen();
+                break;
+            case "Salgado":
+                goToSalgadoScreen();
                 break;
             default:
                 break;
