@@ -12,6 +12,7 @@ module org.example.atvlpi3 {
     requires com.almasb.fxgl.all;
     requires jdk.compiler;
     requires java.sql;
+    requires javafx.media;
 
     opens org.example.atvlpi3 to javafx.fxml;
     exports org.example.atvlpi3;

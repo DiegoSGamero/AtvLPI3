@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Feline;
 
 
@@ -50,6 +52,10 @@ public class FelineShowController {
     @FXML
     void makeSound(ActionEvent event) {
         soundFeline.setText("Rooaoaoow!");
+        String caminho = getClass().getResource("/Sounds/rugido.wav").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML

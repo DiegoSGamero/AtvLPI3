@@ -68,8 +68,6 @@ public class FelineController  {
             // Exibe uma mensagem de sucesso
             exibirAlerta("Cadastro Concluído", "Felino cadastrado com sucesso:\n" + felineCadastrado.toString());
 
-            // Limpa os campos após o cadastro
-            limparCampos();
 
         } catch (
                 NumberFormatException e) {
@@ -91,9 +89,6 @@ public class FelineController  {
     // Inicialização do controller
     @FXML
     public void initialize() {
-        // Conectar o botão ao métdo de cadastro
-        //reptile_up_btn.setOnAction(event -> cadastrarReptil());
-        //btnToShow.setOnAction(event -> rootShowReptile());
         btnBackMenu.setOnAction(event -> {
             try {
                 backToMenu();
@@ -121,12 +116,6 @@ public class FelineController  {
             e.printStackTrace();
             System.out.println("Erro ao carregar a cena do menu.");
         }
-    }
-    //meth p limpar campos
-    private void limparCampos() {
-        fieldSpecie.clear();
-        fieldWeight.clear();
-        fieldHabitat.clear();
     }
 
     public String makeSound() {

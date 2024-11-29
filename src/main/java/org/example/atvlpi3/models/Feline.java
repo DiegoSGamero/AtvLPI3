@@ -1,5 +1,8 @@
 package org.example.atvlpi3.models;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 public class Feline implements Animal {
     private String specie;
     private String habitat;
@@ -35,6 +38,13 @@ public class Feline implements Animal {
 
     public void feed() {
         System.out.println("O felino está se alimentando de carne.");
+    }
+
+    public void rugir() {
+        String caminho = getClass().getResource("/Sounds/rugido.wav").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
 }
