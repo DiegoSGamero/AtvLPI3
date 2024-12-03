@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Carro;
 import org.example.atvlpi3.models.Moto;
 
@@ -49,6 +51,10 @@ public class MotoShowController {
     @FXML
     void ligarMoto(ActionEvent event) {
         ligando.setText("vrummm-vrummm");
+        String caminho = getClass().getResource("/Sounds/moto.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML

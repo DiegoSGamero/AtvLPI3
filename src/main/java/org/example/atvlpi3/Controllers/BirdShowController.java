@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Bird;
 
 public class BirdShowController {
@@ -50,7 +52,11 @@ public class BirdShowController {
 
     @FXML
     void makeSound(ActionEvent event) {
-        labelSound.setText("AAAAA  aaaa  AAAA!");
+        labelSound.setText("pi piu piu!");
+        String caminho = getClass().getResource("/Sounds/bird.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML

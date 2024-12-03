@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Salgado;
 import org.example.atvlpi3.models.Vegetal;
 
@@ -48,7 +50,11 @@ public class SalgadoShowController {
 
     @FXML
     void cozinharSalgado(ActionEvent event) {
-        cozinhando.setText("cuidado com o calor da panela");
+        cozinhando.setText("cuidado com o calor do forno");
+        String caminho = getClass().getResource("/Sounds/salgado.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML

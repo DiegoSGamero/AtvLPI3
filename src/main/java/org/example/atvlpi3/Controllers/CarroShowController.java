@@ -1,6 +1,8 @@
 package org.example.atvlpi3.Controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Carro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,6 +51,10 @@ public class CarroShowController {
     @FXML
     void ligarCarro(ActionEvent event) {
         startCar.setText("vruuum");
+        String caminho = getClass().getResource("/Sounds/car-straring-sound-126708.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML
