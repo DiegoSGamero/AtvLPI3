@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import org.example.atvlpi3.models.Reptile;
 
 public class ReptileShowController {
@@ -39,6 +41,10 @@ public class ReptileShowController {
     //@Override
     public void makeSound() {
         labelMakeSound.setText("Hiss...");
+        String caminho = getClass().getResource("/Sounds/snake-rattle-sound-hq-240150.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     //@Override
