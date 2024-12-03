@@ -45,6 +45,10 @@ public class CarneShowController {
     @FXML
     void comprarCarne(ActionEvent event) {
         comprando.setText("$$ dim dim");
+        String caminho = getClass().getResource("/Sounds/cash.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML

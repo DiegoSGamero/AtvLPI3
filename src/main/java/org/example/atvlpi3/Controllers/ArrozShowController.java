@@ -46,6 +46,10 @@ public class ArrozShowController {
     @FXML
     void comprarArroz(ActionEvent event) {
         comprando.setText("$$ dim dim");
+        String caminho = getClass().getResource("/Sounds/cash.mp3").toExternalForm();
+        Media som = new Media(caminho);
+        MediaPlayer mediaPlayer = new MediaPlayer(som);
+        mediaPlayer.play();
     }
 
     @FXML
